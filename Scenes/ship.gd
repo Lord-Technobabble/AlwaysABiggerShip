@@ -18,8 +18,7 @@ var rotation_power = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var core = starting_core_scene.instantiate()
-	add_child(core)
-	attach_component(core)
+	attach_core(core)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,8 +51,14 @@ func calc_acc(delta: float) -> void:
 	speed += acc * delta
 	position += speed * delta
 
+func attach_core(core):
+	if core is Component:
+		attach_component(core)
+		add_child(core)
+		core.dist_to_core = 0
+
 # Updates all ship values to be in line with the attached component
 func attach_component(component):
 	if component is Component:
-		component.component_stats.attach_to_ship(self)
+		component.attach_to_ship(self)
 	return
