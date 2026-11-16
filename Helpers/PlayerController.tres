@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="PlayerController" format=3 uid="uid://dr2g32ykcppy"]
+
+[ext_resource type="Script" uid="uid://bfrjbf3gdaabd" path="res://Helpers/player_controller.gd" id="1_g2khw"]
+
+[resource]
+script = ExtResource("1_g2khw")

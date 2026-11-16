@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GenericShipController" format=3 uid="uid://b8icocdksd3ex"]
+
+[ext_resource type="Script" uid="uid://duppkrlyl5q64" path="res://Helpers/generic_ship_controller.gd" id="1_v48h8"]
+
+[resource]
+script = ExtResource("1_v48h8")

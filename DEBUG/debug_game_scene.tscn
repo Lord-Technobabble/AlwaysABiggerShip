@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8wgyr08vb05m"]
+
+[ext_resource type="PackedScene" uid="uid://cms0v20uvvbdg" path="res://DEBUG/debug_ship.tscn" id="1_eybcx"]
+
+[node name="DebugGameScene" type="Node2D" unique_id=1838896505]
+
+[node name="DebugShip" parent="." unique_id=990183846 instance=ExtResource("1_eybcx")]
+position = Vector2(969, 597)

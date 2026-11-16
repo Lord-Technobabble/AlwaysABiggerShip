@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GenericComponentStats" format=3 uid="uid://b5f70yank8meu"]
+
+[ext_resource type="Script" uid="uid://ba6b32l0jykeq" path="res://Resources/Scripts/generic_component_stats.gd" id="1_ij0bn"]
+
+[resource]
+script = ExtResource("1_ij0bn")

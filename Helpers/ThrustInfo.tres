@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="ThrustInfo" format=3 uid="uid://mfgmog125mif"]
+
+[ext_resource type="Script" uid="uid://nh8nrba6r4jj" path="res://Helpers/thrust_info.gd" id="1_bo2jp"]
+
+[resource]
+script = ExtResource("1_bo2jp")

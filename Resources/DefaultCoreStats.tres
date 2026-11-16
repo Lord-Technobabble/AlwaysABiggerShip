@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://cqajcaae4ab1x"]
+
+[ext_resource type="Script" uid="uid://cdp41vtxpi8sj" path="res://Resources/Scripts/default_core_stats.gd" id="1_drojp"]
+
+[resource]
+script = ExtResource("1_drojp")
+power_generation = 10
+base_thrust = 10
+max_health = 100
