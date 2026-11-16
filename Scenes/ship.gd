@@ -13,7 +13,7 @@ var thrust_info: ThrustInfo = ThrustInfo.new(0)
 var power_generation = 0
 var power_drain = 0
 var rotation_power = 0
-
+var has_core = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
