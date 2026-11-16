@@ -2,12 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://8fa400x24obd" path="res://Scenes/ship.tscn" id="1_8gybv"]
 [ext_resource type="Resource" uid="uid://dr2g32ykcppy" path="res://Helpers/PlayerController.tres" id="2_kknu8"]
-[ext_resource type="Texture2D" uid="uid://5stw3p4fmujl" path="res://icon.svg" id="3_18p3a"]
+[ext_resource type="PackedScene" uid="uid://ukul4bndfrld" path="res://Scenes/Components/default_core.tscn" id="3_1ium5"]
 
 [node name="DebugShip" unique_id=990183846 instance=ExtResource("1_8gybv")]
 controller = ExtResource("2_kknu8")
+starting_core_scene = ExtResource("3_1ium5")
 
 [node name="ShipMarker" type="Marker2D" parent="." index="0" unique_id=2114613151]
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=1831528866]
-texture = ExtResource("3_18p3a")

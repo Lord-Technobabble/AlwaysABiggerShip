@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ukul4bndfrld"]
+
+[ext_resource type="PackedScene" uid="uid://duxliy6m82d2t" path="res://Scenes/Components/generic_component.tscn" id="1_tu0da"]
+[ext_resource type="Resource" uid="uid://cqajcaae4ab1x" path="res://Resources/Components/Cores/DefaultCoreStats.tres" id="2_ssncu"]
+
+[node name="GenericComponent" unique_id=403831328 instance=ExtResource("1_tu0da")]
+component_stats = ExtResource("2_ssncu")
