@@ -1,4 +1,8 @@
-extends GenericComponent
+class_name Component
+extends Area2D
+
+@export var component_stats: ComponentStats
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

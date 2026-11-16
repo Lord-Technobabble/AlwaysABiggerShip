@@ -19,6 +19,12 @@ func add(b: ThrustInfo):
 	to_fore += b.to_fore
 	to_aft += b.to_aft
 
+func sub(b: ThrustInfo):
+	to_port -= b.to_port
+	to_starboard -= b.to_starboard
+	to_fore -= b.to_fore
+	to_aft -= b.to_aft
+
 func mul(b):
 	if b is ThrustInfo:
 		_TI_mul(b)

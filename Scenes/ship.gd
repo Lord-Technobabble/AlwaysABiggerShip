@@ -1,9 +1,12 @@
+class_name Ship
 extends Node2D
 
 var speed = Vector2(0, 0)
 var rotation_speed = 0
 var weight: int = 0
 var thrust_info: ThrustInfo = ThrustInfo.new(0)
+var power_generation = 0
+var power_drain = 0
 
 @export var controller: GenericShipController = GenericShipController.new()
 @export var starting_core_scene: PackedScene
@@ -34,13 +37,6 @@ func calc_acc(delta: float) -> void:
 
 # Updates all ship values to be in line with the attached component
 func attach_component(component):
-	if not "component_stats" in component:
-		#This is an error, but I dont know error handling yet TODO
-		return
-	
-	var component_stats = component.component_stats
-	if "weight" in component_stats:
-		weight += component_stats.weight
-	
-	if "thrust_info" in component_stats:
-		thrust_info.add(component_stats.thrust_info)
+	if component is Component:
+		component.component_stats.attach_to_ship(self)
+	return

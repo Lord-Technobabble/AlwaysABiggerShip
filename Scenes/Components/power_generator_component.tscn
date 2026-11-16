@@ -1,7 +1,19 @@
-[gd_scene format=3 uid="uid://r7b8ipfacbil"]
+[gd_scene format=3 uid="uid://77m7cfbf5pdj"]
 
-[ext_resource type="PackedScene" uid="uid://duxliy6m82d2t" path="res://Scenes/Components/generic_component.tscn" id="1_6mroq"]
-[ext_resource type="Script" uid="uid://b6qerrioi2v23" path="res://Scenes/Components/power_generator_component.gd" id="2_q6a2u"]
+[ext_resource type="PackedScene" uid="uid://duxliy6m82d2t" path="res://Scenes/Components/component.tscn" id="1_6mroq"]
+
+[sub_resource type="GDScript" id="GDScript_6mroq"]
+script/source = "extends GenericComponent
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="PowerGeneratorComponent" unique_id=501219331 instance=ExtResource("1_6mroq")]
-script = ExtResource("2_q6a2u")
+script = SubResource("GDScript_6mroq")
