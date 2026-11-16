@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://5stw3p4fmujl" path="res://icon.svg" id="2_p8ofj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="GenericComponent" type="Area2D" unique_id=403831328]
 script = ExtResource("1_s5lif")
 
 [node name="ComponentSprite" type="Sprite2D" parent="." unique_id=1031695043]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_p8ofj")
 
 [node name="ComponentCollisionShape" type="CollisionShape2D" parent="." unique_id=1078888413]
@@ -18,13 +19,13 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="ConnectionPoints" type="Node2D" parent="." unique_id=982104182]
 
 [node name="ForeConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1313674600]
-position = Vector2(0, -64)
+position = Vector2(0, -32)
 
 [node name="StarboardConnection" type="Marker2D" parent="ConnectionPoints" unique_id=844192729]
-position = Vector2(64, 0)
+position = Vector2(32, 0)
 
 [node name="AftConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1977668198]
-position = Vector2(0, 64)
+position = Vector2(0, 32)
 
 [node name="PortConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1453327071]
-position = Vector2(-64, 0)
+position = Vector2(-32, 0)

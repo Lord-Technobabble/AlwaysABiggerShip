@@ -1,6 +1,7 @@
 class_name PlayerController
 extends GenericShipController
 
+#TODO introduce inertial dampeners
 func get_next_thrust() -> ThrustInfo:
 	var thrust_info = ThrustInfo.new(0)
 	
@@ -17,3 +18,14 @@ func get_next_thrust() -> ThrustInfo:
 		thrust_info.to_starboard = 1
 	
 	return thrust_info
+
+func get_next_rotation() -> float:
+	var result = 0
+	
+	if Input.is_action_pressed("rotate_to_port"):
+		result += 1
+	
+	if Input.is_action_pressed("rotate_to_starboard"):
+		result -= 1
+	
+	return result

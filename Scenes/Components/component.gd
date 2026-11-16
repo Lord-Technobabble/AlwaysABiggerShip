@@ -2,7 +2,7 @@ class_name Component
 extends Area2D
 
 @export var component_stats: ComponentStats
-
+var owner_ship: Ship | null = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_drojp")
 power_generation = 10
-base_thrust = 1000
-max_health = 100
+base_thrust = 500
+rotation_power = 10
