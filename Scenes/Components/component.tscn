@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kco6o0lwsjlo" path="res://Scenes/Components/component.gd" id="1_s5lif"]
 [ext_resource type="Texture2D" uid="uid://5stw3p4fmujl" path="res://icon.svg" id="2_p8ofj"]
+[ext_resource type="PackedScene" uid="uid://7jbj3oycb4t2" path="res://Scenes/connector.tscn" id="3_p8ofj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(64, 64)
@@ -16,16 +17,18 @@ texture = ExtResource("2_p8ofj")
 [node name="ComponentCollisionShape" type="CollisionShape2D" parent="." unique_id=1078888413]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="ConnectionPoints" type="Node2D" parent="." unique_id=982104182]
+[node name="Connector" type="Node2D" parent="." unique_id=982104182]
 
-[node name="ForeConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1313674600]
+[node name="RightConnector" parent="Connector" unique_id=165240547 instance=ExtResource("3_p8ofj")]
+position = Vector2(32, 1.9073486e-06)
+
+[node name="LeftConnector" parent="Connector" unique_id=1192369320 instance=ExtResource("3_p8ofj")]
+position = Vector2(-31.999998, 0)
+
+[node name="TopConnector" parent="Connector" unique_id=995239339 instance=ExtResource("3_p8ofj")]
 position = Vector2(0, -32)
+rotation = 1.5707964
 
-[node name="StarboardConnection" type="Marker2D" parent="ConnectionPoints" unique_id=844192729]
-position = Vector2(32, 0)
-
-[node name="AftConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1977668198]
+[node name="BottomConnector" parent="Connector" unique_id=348781827 instance=ExtResource("3_p8ofj")]
 position = Vector2(0, 32)
-
-[node name="PortConnection" type="Marker2D" parent="ConnectionPoints" unique_id=1453327071]
-position = Vector2(-32, 0)
+rotation = 1.5707964
