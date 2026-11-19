@@ -5,12 +5,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 64)
 
-[node name="Connector" type="Marker2D" unique_id=165240547]
+[node name="ConnectorArea" type="Area2D" unique_id=902451792]
 script = ExtResource("1_k5fym")
 
-[node name="ConnectorArea" type="Area2D" parent="." unique_id=902451792]
-
-[node name="ConnectorCollisionShape" type="CollisionShape2D" parent="ConnectorArea" unique_id=1786390036]
+[node name="ConnectorCollisionShape" type="CollisionShape2D" parent="." unique_id=1786390036]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[connection signal="area_entered" from="ConnectorArea" to="." method="_on_connector_area_area_entered"]
+[node name="Connector" type="Marker2D" parent="." unique_id=165240547]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,9 +1,11 @@
 class_name Connector
-extends Marker2D
+extends Area2D
 
-signal connected(position_change, rotation_change)
+signal connection_requested(to, from)
+
 #TODO handle disabling the hitbox when inactive/unconnected
 @export var is_active: bool = true
+
 var is_occupied: bool:
 	get:
 		return connected_to != null
@@ -25,17 +27,14 @@ func _process(delta: float) -> void:
 func can_connect() -> bool:
 	return is_active and !is_connected
 
-
-func _on_connector_area_area_entered(area: Area2D) -> void:
-	#Cannot connect to the connector, we don't care about it
-	if !can_connect():
+func _on_area_entered(area: Area2D) -> void:
+		#Cannot connect to the connector, we don't care about it
+	if not can_connect():
 		return
 
-	var area_parent = area.get_parent()
-	if area_parent is not Connector:
+	if area is not Connector:
 		return
 	
-	var connector: Connector = area_parent
+	var connector: Connector = area
 	
-	#Connect it to the component
-	pass # Replace with function body.
+	connection_requested.emit(self, connector)
