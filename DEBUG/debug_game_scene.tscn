@@ -9,7 +9,18 @@
 position = Vector2(969, 597)
 
 [node name="GenericComponent" parent="." unique_id=403831328 instance=ExtResource("2_cxlck")]
-position = Vector2(296, 344)
+position = Vector2(268, 368)
+scale = Vector2(0.5, 0.5)
 
 [node name="GenericComponent2" parent="." unique_id=1892740690 instance=ExtResource("2_cxlck")]
 position = Vector2(1674, 548)
+
+[node name="GenericComponent3" parent="." unique_id=961633374 instance=ExtResource("2_cxlck")]
+position = Vector2(266, 804)
+scale = Vector2(0.1, 0.1)
+
+[node name="GenericComponent4" parent="." unique_id=1703541674 instance=ExtResource("2_cxlck")]
+position = Vector2(688, 323)
+
+[node name="GenericComponent5" parent="." unique_id=1641696120 instance=ExtResource("2_cxlck")]
+position = Vector2(571, 915)

@@ -1,3 +1,3 @@
 extends Node
 
-const COMPONENT_GRID_SIZE = 64
+const COMPONENT_GRID_SIZE = 32
