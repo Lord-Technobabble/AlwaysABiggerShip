@@ -17,18 +17,26 @@ texture = ExtResource("2_p8ofj")
 [node name="ComponentCollisionShape" type="CollisionShape2D" parent="." unique_id=1078888413]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Connector" type="Node2D" parent="." unique_id=982104182]
+[node name="Connectors" type="Node2D" parent="." unique_id=982104182]
 
-[node name="RightConnector" parent="Connector" unique_id=165240547 instance=ExtResource("3_p8ofj")]
+[node name="RightConnector" parent="Connectors" unique_id=165240547 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
 position = Vector2(32, 1.9073486e-06)
+connection_coords = Vector2i(1, 0)
+parent = NodePath("../..")
 
-[node name="LeftConnector" parent="Connector" unique_id=1192369320 instance=ExtResource("3_p8ofj")]
+[node name="LeftConnector" parent="Connectors" unique_id=1192369320 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
 position = Vector2(-31.999998, 0)
+connection_coords = Vector2i(-1, 0)
+parent = NodePath("../..")
 
-[node name="TopConnector" parent="Connector" unique_id=995239339 instance=ExtResource("3_p8ofj")]
+[node name="TopConnector" parent="Connectors" unique_id=995239339 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
 position = Vector2(0, -32)
 rotation = 1.5707964
+connection_coords = Vector2i(0, -1)
+parent = NodePath("../..")
 
-[node name="BottomConnector" parent="Connector" unique_id=348781827 instance=ExtResource("3_p8ofj")]
+[node name="BottomConnector" parent="Connectors" unique_id=348781827 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
 position = Vector2(0, 32)
 rotation = 1.5707964
+connection_coords = Vector2i(0, 1)
+parent = NodePath("../..")

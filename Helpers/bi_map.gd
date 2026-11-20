@@ -23,3 +23,9 @@ func erase_a(a: Variant):
 func erase_b(b: Variant):
 	var a = _b_to_a[b]
 	erase_a(a)
+
+func has_a(a: Variant):
+	return _a_to_b.has(a)
+
+func has_b(b: Variant):
+	return _b_to_a.has(b)

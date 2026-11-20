@@ -1,19 +1,21 @@
 class_name Connector
 extends Area2D
 
-signal connection_requested(to, from)
+#Signal emited when 
+signal connection_requested(static_connector: Connector, non_static_connector: Connector)
 
 #TODO handle disabling the hitbox when inactive/unconnected
+
+#For disabling specific connectors
 @export var is_active: bool = true
 
-var is_occupied: bool:
-	get:
-		return connected_to != null
+#Only a static and a non static connector can connect
+@export var is_static: bool = false
 
-var connected_to: Node2D = null
+@export var connection_coords: Vector2i = Vector2i(0, 0)
+@export var parent: Node2D
 
-#Used to determine which connector will want to move to which
-var will_parent: bool = false
+var is_occupied: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,11 +23,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func can_connect() -> bool:
-	return is_active and !is_connected
+	return is_active and is_static and !is_occupied
 
 func _on_area_entered(area: Area2D) -> void:
 		#Cannot connect to the connector, we don't care about it
@@ -35,6 +37,12 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is not Connector:
 		return
 	
-	var connector: Connector = area
+	var other_connector: Connector = area
 	
-	connection_requested.emit(self, connector)
+	if other_connector.is_static:
+		return
+	
+	if other_connector.parent == null:
+		push_error("There is a connector to nothing just floating")
+
+	connection_requested.emit(self, other_connector)

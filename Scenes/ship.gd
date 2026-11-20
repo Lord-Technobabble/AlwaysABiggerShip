@@ -10,6 +10,10 @@ var rotation_speed = 0
 const ROT_CUTOFF = 0.1
 const SPEED_CUTOFF = 1
 
+#Bimap for easy two way component lookup
+#Cause Godot doesn't let me set my own variant type its {Vector2I : Component}
+var components_map = BiMap.new()
+
 #Component stats
 var weight: int = 0
 var thrust_info: ThrustInfo = ThrustInfo.new(0)
@@ -61,14 +65,35 @@ func calc_acc(delta: float) -> void:
 
 	position += speed * delta
 
-func attach_core(core):
-	if core is Component:
-		attach_component(core)
-		add_child(core)
-		core.dist_to_core = 0
+func attach_core(core: Component):
+	add_child(core)
+	attach_component(core, Vector2i(0, 0))
 
 # Updates all ship values to be in line with the attached component
-func attach_component(component):
-	if component is Component:
-		component.attach_to_ship(self)
-	return
+func attach_component(component: Component, coords: Vector2i, new_rotation: float = 0):
+	component.attach_to_ship(self)
+	component.reparent(self, true)
+	
+	var new_pos = coords * Constants.COMPONENT_GRID_SIZE
+	component.position = new_pos
+	
+
+	component.rotation = new_rotation
+	
+	if components_map.has_a(coords):
+		push_error("Trying to attach a component to a location, that already has one")
+	components_map.assign(coords, component)
+	
+	component.connection_requested.connect(component_connection_requested)
+
+func update_connectors_around(coords: Vector2i):
+	var should_be_active = components_map.has_a(coords)
+	pass
+
+func component_connection_requested(sc: Connector, nsc: Connector):
+	var placement_coords = components_map.get_a(sc.parent) + sc.connection_coords
+	
+	#TODO handle snapping to the corresponding connector rotation
+	var new_rotation = 0
+	
+	attach_component(nsc.parent, placement_coords, new_rotation)
