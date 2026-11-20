@@ -22,11 +22,17 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func change_connector_static(is_static: bool):
+	for connector in connectors:
+		connector.is_static = is_static
+
 func attach_to_ship(ship: Ship):
 	if owner_ship != null:
 		push_error("Component is already attached to ship")
 		return
 	owner_ship = ship
+	
+	change_connector_static(true)
 	
 	if component_stats == null:
 		push_error("Trying to attach a component without stats")
@@ -39,9 +45,11 @@ func detach_from_ship():
 		push_warning("Component is not attached to ship, so cannot remove")
 		return
 	
+	change_connector_static(false)
+	
 	if component_stats == null:
 		push_error("Trying to attach a component without stats")
-		
+	
 	else:
 		component_stats.detach_from_ship(owner_ship)
 	owner_ship = null

@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://d2xc2myhq1umv" path="res://Scenes/connector.gd" id="1_k5fym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(20, 64)
+size = Vector2(10, 64)
 
 [node name="ConnectorArea" type="Area2D" unique_id=902451792]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_k5fym")
 
 [node name="ConnectorCollisionShape" type="CollisionShape2D" parent="." unique_id=1786390036]
+position = Vector2(5, 0)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Connector" type="Marker2D" parent="." unique_id=165240547]
