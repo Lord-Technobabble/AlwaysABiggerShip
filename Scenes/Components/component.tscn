@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://duxliy6m82d2t"]
 
 [ext_resource type="Script" uid="uid://kco6o0lwsjlo" path="res://Scenes/Components/component.gd" id="1_s5lif"]
-[ext_resource type="Texture2D" uid="uid://5stw3p4fmujl" path="res://icon.svg" id="2_p8ofj"]
+[ext_resource type="Texture2D" uid="uid://btnx3obnhhf0u" path="res://Art/MissingComponentTexture.png" id="2_p8ofj"]
 [ext_resource type="PackedScene" uid="uid://7jbj3oycb4t2" path="res://Scenes/connector.tscn" id="3_p8ofj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(32, 32)
+size = Vector2(64, 64)
 
 [node name="GenericComponent" type="Area2D" unique_id=403831328]
 monitoring = false
@@ -13,7 +13,6 @@ monitorable = false
 script = ExtResource("1_s5lif")
 
 [node name="ComponentSprite" type="Sprite2D" parent="." unique_id=1031695043]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_p8ofj")
 
 [node name="ComponentCollisionShape" type="CollisionShape2D" parent="." unique_id=1078888413]
@@ -22,24 +21,24 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Connectors" type="Node2D" parent="." unique_id=982104182]
 
 [node name="RightConnector" parent="Connectors" unique_id=165240547 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
-position = Vector2(16, 0)
+position = Vector2(32, 0)
 connection_coords = Vector2i(1, 0)
 parent = NodePath("../..")
 
 [node name="LeftConnector" parent="Connectors" unique_id=1192369320 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
-position = Vector2(-16, 0)
+position = Vector2(-32, 0)
 rotation = 3.1415927
 connection_coords = Vector2i(-1, 0)
 parent = NodePath("../..")
 
 [node name="TopConnector" parent="Connectors" unique_id=995239339 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
-position = Vector2(0, -16)
+position = Vector2(0, -32)
 rotation = -1.5707964
 connection_coords = Vector2i(0, -1)
 parent = NodePath("../..")
 
 [node name="BottomConnector" parent="Connectors" unique_id=348781827 node_paths=PackedStringArray("parent") instance=ExtResource("3_p8ofj")]
-position = Vector2(0, 16)
+position = Vector2(0, 32)
 rotation = 1.5707964
 connection_coords = Vector2i(0, 1)
 parent = NodePath("../..")

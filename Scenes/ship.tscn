@@ -4,3 +4,5 @@
 
 [node name="Ship" type="Node2D" unique_id=990183846]
 script = ExtResource("1_j6tcd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2113334723]

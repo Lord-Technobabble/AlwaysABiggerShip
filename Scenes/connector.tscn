@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2xc2myhq1umv" path="res://Scenes/connector.gd" id="1_k5fym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(10, 32)
+size = Vector2(10, 64)
 
 [node name="ConnectorArea" type="Area2D" unique_id=902451792]
 collision_layer = 2

@@ -11,12 +11,20 @@ var ship_coord = Vector2i(0, 0)
 var connectors: Array[Connector] = []
 
 # Called when the node enters the scene tree for the first time.
+func use_component_stats():
+	if component_stats == null:
+		push_error("There are no stats to use, please attach them")
+		return
+	$ComponentSprite.texture = component_stats.sprite
+
 func _ready() -> void:
 	for connector in $Connectors.get_children():
 		connectors.append(connector)
 	
 	for connector in connectors:
 		connector.connection_requested.connect(connector_connection_requested) #Try to say that twice :)
+	
+	use_component_stats()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

@@ -1,9 +1,11 @@
 [gd_resource type="Resource" format=3 uid="uid://cqajcaae4ab1x"]
 
 [ext_resource type="Script" uid="uid://cdp41vtxpi8sj" path="res://Resources/Scripts/core_stats.gd" id="1_drojp"]
+[ext_resource type="Texture2D" uid="uid://1yy1t7oeauuf" path="res://Art/Cockpit.png" id="2_1nqvm"]
 
 [resource]
 script = ExtResource("1_drojp")
 power_generation = 10
 base_thrust = 500
 rotation_power = 10
+sprite = ExtResource("2_1nqvm")

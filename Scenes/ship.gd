@@ -1,5 +1,6 @@
 class_name Ship
 extends Node2D
+
 @export var controller: DeadShipController = DeadShipController.new()
 @export var starting_core_scene: PackedScene
 
