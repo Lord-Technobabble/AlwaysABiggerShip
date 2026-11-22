@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TurretStats" format=3 uid="uid://cra4leyo2vsaq"]
+
+[ext_resource type="Script" uid="uid://dxch6gctrl0p6" path="res://Resources/Scripts/turret_stats.gd" id="1_ckapx"]
+[ext_resource type="Resource" uid="uid://b6dfo2yud7be6" path="res://Resources/Components/Weapons/Bolt1Shot.tres" id="2_510th"]
+[ext_resource type="Texture2D" uid="uid://bd1fgsfguipw6" path="res://Art/Weapon.png" id="3_s7yyc"]
+
+[resource]
+script = ExtResource("1_ckapx")
+shots_per_minute = 120.0
+texture = ExtResource("3_s7yyc")
+shot_stats = ExtResource("2_510th")

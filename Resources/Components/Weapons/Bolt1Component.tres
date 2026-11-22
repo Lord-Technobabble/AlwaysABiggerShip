@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ComponentStats" format=3 uid="uid://cdhp1ehewf7ih"]
+
+[ext_resource type="Script" uid="uid://ba6b32l0jykeq" path="res://Resources/Scripts/component_stats.gd" id="1_n3fbm"]
+[ext_resource type="Texture2D" uid="uid://c8p5bcfow6oin" path="res://Art/TurretBase.png" id="2_8lawt"]
+
+[resource]
+script = ExtResource("1_n3fbm")
+sprite = ExtResource("2_8lawt")

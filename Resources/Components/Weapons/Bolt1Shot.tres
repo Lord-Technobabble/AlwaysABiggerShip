@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShotStats" format=3 uid="uid://b6dfo2yud7be6"]
+
+[ext_resource type="Script" uid="uid://cpqwnynnsf6pc" path="res://Resources/Scripts/shot_stats.gd" id="1_eo0ft"]
+[ext_resource type="Texture2D" uid="uid://ce20uxnxelf2d" path="res://Art/BoltShot.png" id="2_uf0lq"]
+
+[resource]
+script = ExtResource("1_eo0ft")
+damage = 10.0
+speed = 200.0
+texture = ExtResource("2_uf0lq")
