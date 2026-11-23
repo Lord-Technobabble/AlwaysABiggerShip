@@ -6,5 +6,4 @@
 [resource]
 script = ExtResource("1_3n2gi")
 max_health = 200
-weight = 10
 sprite = ExtResource("2_6x3yc")

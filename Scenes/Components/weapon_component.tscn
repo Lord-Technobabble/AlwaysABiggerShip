@@ -15,9 +15,11 @@ texture = ExtResource("2_hn3bg")
 [node name="WeaponPivot" type="Node2D" parent="." index="3" unique_id=734153699]
 
 [node name="WeaponSprite" type="Sprite2D" parent="WeaponPivot" index="0" unique_id=22426554]
+rotation = 1.5707964
 texture = ExtResource("3_in14i")
 
 [node name="WeaponBarrels" type="Node2D" parent="WeaponPivot" index="1" unique_id=1815236056]
+rotation = 1.5707964
 
 [node name="Barrel0" type="Marker2D" parent="WeaponPivot/WeaponBarrels" index="0" unique_id=82079149]
 position = Vector2(0, -24)

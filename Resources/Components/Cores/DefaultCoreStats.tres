@@ -7,5 +7,5 @@
 script = ExtResource("1_drojp")
 power_generation = 10
 base_thrust = 500
-rotation_power = 10
+rotation_power = 100
 sprite = ExtResource("2_1nqvm")

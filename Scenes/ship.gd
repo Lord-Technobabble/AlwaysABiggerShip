@@ -45,7 +45,9 @@ func calc_rot(delta: float) -> void:
 	var next_rot = controller.get_next_rotation()
 	var rotation_acc = next_rot * rotation_power / weight
 	
-	rotation_speed += rotation_acc * delta
+	rotation_speed = (rotation_speed + rotation_acc * delta)
+	rotation_speed = min(max(rotation_speed, -Constants.MAX_ROTATION_SPEED), Constants.MAX_ROTATION_SPEED)
+	
 	if abs(rotation_speed) < ROT_CUTOFF:
 		rotation_speed = 0
 
@@ -59,6 +61,13 @@ func calc_acc(delta: float) -> void:
 	var acc = thrust / weight
 	
 	speed += acc * delta
+	
+	#TODO: THIS IS UGLY, MAKE THIS BETTER
+	speed.x = min(speed.x, Constants.MAX_SPEED)
+	speed.x = max(speed.x, -Constants.MAX_SPEED)
+	speed.y = min(speed.y, Constants.MAX_SPEED)
+	speed.y = max(speed.y, -Constants.MAX_SPEED)
+	
 	if abs(speed.x) < SPEED_CUTOFF:
 		speed.x = 0
 	if abs(speed.y) < SPEED_CUTOFF:
@@ -101,8 +110,6 @@ func update_connectors_around(coords: Vector2i):
 		comp.connectors[-dir].is_occupied = coords_comp != null
 		
 		if coords_comp != null:
-			if coords_comp.connectors.has(dir):
-				continue
 			coords_comp.connectors[dir].is_occupied = true
 
 func component_connection_requested(sc: Connector, nsc: Connector):

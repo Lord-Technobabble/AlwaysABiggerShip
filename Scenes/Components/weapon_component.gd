@@ -2,7 +2,7 @@ extends Component
 
 @export var turret_stats: TurretStats
 
-var _targeting_groups: Array[String] = []
+var _targeting_groups: Array[String] = ["ship"]
 var _barrels: Array[Node2D] = []
 var _current_target: Node2D = null
 # Called when the node enters the scene tree for the first time.
@@ -10,10 +10,12 @@ func _ready() -> void:
 	var barrels = $WeaponPivot/WeaponBarrels.get_children()
 	for barrel in barrels:
 		_barrels.append(barrel)
+	super._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	set_target()
+	track_target()
 
 func track_target():
 	if _current_target == null:
