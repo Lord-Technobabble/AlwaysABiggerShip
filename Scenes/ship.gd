@@ -98,3 +98,8 @@ func component_connection_requested(sc: Connector, nsc: Connector):
 	var new_rotation = 0
 	
 	attach_component(nsc.parent, placement_coords, new_rotation)
+
+func get_closest_component(to: Vector2) -> Component:
+	#TODO make this correct, for testing, targets the center of the ship
+	push_warning("DEBUG: This is not fully implemented, complete it before finishing the product")
+	return components_map.get_b(Vector2i(0, 0))
