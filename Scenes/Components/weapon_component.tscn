@@ -23,3 +23,7 @@ rotation = 1.5707964
 
 [node name="Barrel0" type="Marker2D" parent="WeaponPivot/WeaponBarrels" index="0" unique_id=82079149]
 position = Vector2(0, -24)
+
+[node name="WeaponCooldown" type="Timer" parent="." index="4" unique_id=25439094]
+
+[connection signal="timeout" from="WeaponCooldown" to="." method="_on_weapon_cooldown_timeout"]
