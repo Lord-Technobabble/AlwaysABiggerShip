@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cms0v20uvvbdg" path="res://DEBUG/debug_ship.tscn" id="1_eybcx"]
 [ext_resource type="PackedScene" uid="uid://duxliy6m82d2t" path="res://Scenes/Components/component.tscn" id="2_cxlck"]
+[ext_resource type="PackedScene" uid="uid://difbn4una6m7o" path="res://Scenes/Components/weapon_component.tscn" id="3_ft7yg"]
+[ext_resource type="Resource" uid="uid://cra4leyo2vsaq" path="res://Resources/Components/Weapons/Bolt1Turret.tres" id="4_0hc5t"]
+[ext_resource type="Resource" uid="uid://cdhp1ehewf7ih" path="res://Resources/Components/Weapons/Bolt1Component.tres" id="5_bq2pt"]
 
 [node name="DebugGameScene" type="Node2D" unique_id=1838896505]
 
@@ -24,3 +27,8 @@ position = Vector2(688, 323)
 
 [node name="GenericComponent5" parent="." unique_id=1641696120 instance=ExtResource("2_cxlck")]
 position = Vector2(571, 915)
+
+[node name="WeaponComponent" parent="." unique_id=1955979112 instance=ExtResource("3_ft7yg")]
+position = Vector2(470, 749)
+turret_stats = ExtResource("4_0hc5t")
+component_stats = ExtResource("5_bq2pt")
