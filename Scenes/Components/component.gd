@@ -8,7 +8,7 @@ signal connection_requested(static_connector: Connector,
 
 var owner_ship: Ship = null
 var ship_coord = Vector2i(0, 0)
-var connectors: Array[Connector] = []
+var connectors: Dictionary[Vector2i, Connector] = {}
 
 # Called when the node enters the scene tree for the first time.
 func use_component_stats():
@@ -19,9 +19,9 @@ func use_component_stats():
 
 func _ready() -> void:
 	for connector in $Connectors.get_children():
-		connectors.append(connector)
+		connectors[connector.connection_coords] = connector
 	
-	for connector in connectors:
+	for connector in connectors.values():
 		connector.connection_requested.connect(connector_connection_requested) #Try to say that twice :)
 	
 	use_component_stats()
@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func change_connector_static(is_static: bool):
-	for connector in connectors:
+	for connector in connectors.values():
 		connector.is_static = is_static
 
 func attach_to_ship(ship: Ship):

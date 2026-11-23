@@ -85,11 +85,25 @@ func attach_component(component: Component, coords: Vector2i, new_rotation: floa
 		push_error("Trying to attach a component to a location, that already has one")
 	components_map.assign(coords, component)
 	
+	update_connectors_around(coords)
 	component.connection_requested.connect(component_connection_requested)
 
 func update_connectors_around(coords: Vector2i):
-	var should_be_active = components_map.has_a(coords)
-	pass
+	#We look if there's something on the coords and update the surrounding components connectors accordingly
+	var coords_comp: Component = components_map.get_b(coords)
+	var directions: Array[Vector2i] = [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
+	
+	for dir in directions:
+		if !components_map.has_a(coords + dir):
+			continue
+		
+		var comp: Component = components_map.get_b(coords + dir)
+		comp.connectors[-dir].is_occupied = coords_comp != null
+		
+		if coords_comp != null:
+			if coords_comp.connectors.has(dir):
+				continue
+			coords_comp.connectors[dir].is_occupied = true
 
 func component_connection_requested(sc: Connector, nsc: Connector):
 	var placement_coords = components_map.get_a(sc.parent) + sc.connection_coords

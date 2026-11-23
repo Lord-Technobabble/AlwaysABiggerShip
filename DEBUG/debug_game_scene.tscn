@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cms0v20uvvbdg" path="res://DEBUG/debug_ship.tscn" id="1_eybcx"]
 [ext_resource type="PackedScene" uid="uid://duxliy6m82d2t" path="res://Scenes/Components/component.tscn" id="2_cxlck"]
+[ext_resource type="Resource" uid="uid://cciej1p4o232" path="res://Resources/Components/Armors/Armor1.tres" id="3_0hc5t"]
 [ext_resource type="PackedScene" uid="uid://difbn4una6m7o" path="res://Scenes/Components/weapon_component.tscn" id="3_ft7yg"]
 [ext_resource type="Resource" uid="uid://cra4leyo2vsaq" path="res://Resources/Components/Weapons/Bolt1Turret.tres" id="4_0hc5t"]
 [ext_resource type="Resource" uid="uid://cdhp1ehewf7ih" path="res://Resources/Components/Weapons/Bolt1Component.tres" id="5_bq2pt"]
@@ -11,22 +12,9 @@
 [node name="DebugShip" parent="." unique_id=990183846 instance=ExtResource("1_eybcx")]
 position = Vector2(969, 597)
 
-[node name="GenericComponent" parent="." unique_id=403831328 instance=ExtResource("2_cxlck")]
-position = Vector2(268, 368)
-scale = Vector2(0.5, 0.5)
-
-[node name="GenericComponent2" parent="." unique_id=1892740690 instance=ExtResource("2_cxlck")]
-position = Vector2(1674, 548)
-
-[node name="GenericComponent3" parent="." unique_id=961633374 instance=ExtResource("2_cxlck")]
-position = Vector2(266, 804)
-scale = Vector2(0.1, 0.1)
-
 [node name="GenericComponent4" parent="." unique_id=1703541674 instance=ExtResource("2_cxlck")]
 position = Vector2(688, 323)
-
-[node name="GenericComponent5" parent="." unique_id=1641696120 instance=ExtResource("2_cxlck")]
-position = Vector2(571, 915)
+component_stats = ExtResource("3_0hc5t")
 
 [node name="WeaponComponent" parent="." unique_id=1955979112 instance=ExtResource("3_ft7yg")]
 position = Vector2(470, 749)
