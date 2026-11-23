@@ -8,8 +8,8 @@ var speed = Vector2(0, 0)
 var rotation_speed = 0
 
 #Movement Cutoffs
-const ROT_CUTOFF = 0.1
-const SPEED_CUTOFF = 1
+const ROT_CUTOFF = 1
+const SPEED_CUTOFF = 10
 
 #Bimap for easy two way component lookup
 #Cause Godot doesn't let me set my own variant type its {Vector2I : Component}
@@ -36,7 +36,6 @@ func move(delta: float) -> void:
 	if weight == 0:
 		push_error("Ship weight 0, infinite speed would be achieved")
 		return
-	
 	calc_rot(delta)
 	calc_acc(delta)
 	controller.update_movement_info(MovementInfo.new(speed, rotation, rotation_speed))

@@ -2,6 +2,11 @@ extends Component
 
 @export var turret_stats: TurretStats
 
+signal shot(from: Vector2, \
+			rotation: float, \
+			shot: ShotStats,
+			target: Node2D)
+
 var _targeting_groups: Array[String] = ["ship"]
 var _barrels: Array[Node2D] = []
 var _current_target: Node2D = null
