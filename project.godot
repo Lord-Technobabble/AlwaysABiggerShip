@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 ComponentCreator="*uid://d2dvycjp015ce"
 Constants="*uid://tlpmm22m1hm4"
+ShotRelayer="*uid://60bicel8l26j"
+ShipCreator="*uid://66rbxdrq3pxw"
+HelpfulFce="*uid://bbsawxdmvl65g"
 
 [display]
 

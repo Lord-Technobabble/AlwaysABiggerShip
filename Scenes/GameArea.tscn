@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bf0nho17sxf2r"]
+
+[node name="GameArea" type="Node2D" unique_id=50455512]
+
+[node name="InitialPlayerSpawn" type="Marker2D" parent="." unique_id=1717897172]
+position = Vector2(960, 631)

@@ -8,8 +8,8 @@ var speed = Vector2(0, 0)
 var rotation_speed = 0
 
 #Movement Cutoffs
-const ROT_CUTOFF = 1
-const SPEED_CUTOFF = 10
+const ROT_CUTOFF = 0
+const SPEED_CUTOFF = 0
 
 #Bimap for easy two way component lookup
 #Cause Godot doesn't let me set my own variant type its {Vector2I : Component}
@@ -89,7 +89,7 @@ func attach_component(component: Component, coords: Vector2i, new_rotation: floa
 
 	component.rotation = new_rotation
 	
-	if components_map.has_a(coords):
+	if has_component_at(coords):
 		push_error("Trying to attach a component to a location, that already has one")
 	components_map.assign(coords, component)
 	
@@ -122,3 +122,6 @@ func component_connection_requested(sc: Connector, nsc: Connector):
 func get_closest_component(to: Vector2) -> Component:
 	#TODO make this correct, for testing, targets the center of the ship
 	return components_map.get_b(Vector2i(0, 0))
+
+func has_component_at(coords: Vector2i) -> bool:
+	return components_map.has_a(coords)
