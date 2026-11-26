@@ -14,7 +14,7 @@ func create_basic_ship() -> Ship:
 
 func create_ship_from_bag(part_bag: BagRandomizer) -> Ship:
 	var ship: Ship = preload("res://Scenes/ship.tscn").instantiate()
-	ship.attach_core(preload("res://Scenes/Components/default_core.tscn").instantiate())
+	ship.starting_core_scene = preload("res://Scenes/Components/default_core.tscn")
 	
 	while not part_bag.is_empty():
 		var next_name = part_bag.grab()

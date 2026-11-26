@@ -81,7 +81,11 @@ func attach_core(core: Component):
 # Updates all ship values to be in line with the attached component
 func attach_component(component: Component, coords: Vector2i, new_rotation: float = 0):
 	component.attach_to_ship(self)
-	component.reparent(self, true)
+	
+	if component.get_parent() == null:
+		add_child(component)
+	else:
+		component.reparent(self, true)
 	
 	var new_pos = coords * Constants.COMPONENT_GRID_SIZE
 	component.position = new_pos
