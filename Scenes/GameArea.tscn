@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bf0nho17sxf2r"]
 
+[ext_resource type="Script" uid="uid://cfd04dl8t8s7r" path="res://Scenes/game_area.gd" id="1_jvtle"]
+
 [node name="GameArea" type="Node2D" unique_id=50455512]
+script = ExtResource("1_jvtle")
 
 [node name="InitialPlayerSpawn" type="Marker2D" parent="." unique_id=1717897172]
 position = Vector2(960, 631)

@@ -1,3 +1,4 @@
+class_name WeaponComponent
 extends Component
 
 @export var turret_stats: TurretStats
